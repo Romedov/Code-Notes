@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GradProjMobile.Views.UserControls.FrameButton"
+       
+             x:Name="FrameLayout"
+             Grid.Row="0" Grid.ColumnSpan="3" Padding="0,0,0,15">
+    <Frame.GestureRecognizers>
+        <TapGestureRecognizer 
+                    x:Name="Tapper" 
+                    Tapped="OnButtonTapped"
+                    Command="{Binding Command}"
+                    CommandParameter="{Binding CommandParameter}"/>
+    </Frame.GestureRecognizers>
+    <Grid x:Name="FrameGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="ButtonImage" Margin="0,0,20,0" 
+                       HorizontalOptions="Start" Aspect="AspectFit"
+                       VerticalOptions="CenterAndExpand" Grid.Column="0"
+                       Source="{Binding ImageSource}"/>
+        <Label x:Name="ButtonText" 
+                       FontSize="{Binding FontSize}" 
+                       FontFamily="{Binding FontFamily}"
+                       FontAttributes="{Binding FontAttributes}"
+                       Text="{Binding Text}"
+                       TextColor="{Binding TextColor}"
+                       Margin="0,0,0,0" Padding="0,0,0,0" VerticalOptions="Center" 
+                       HorizontalOptions="StartAndExpand" Grid.Column="1" />
+    </Grid>
+</Frame>
