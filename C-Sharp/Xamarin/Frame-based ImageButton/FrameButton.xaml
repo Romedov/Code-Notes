@@ -6,8 +6,7 @@
     mc:Ignorable="d"
     x:Class="GradProjMobile.Views.UserControls.FrameButton"
        
-    x:Name="FrameLayout"
-    Padding="0,0,0,0">
+    x:Name="FrameLayout">
     <Frame.GestureRecognizers>
         <TapGestureRecognizer 
             x:Name="Tapper" 
@@ -16,8 +15,8 @@
             CommandParameter="{Binding CommandParameter}"/>
     </Frame.GestureRecognizers>
 
-    <FlexLayout Direction="Row" BackgroundColor="Transparent">
-        <Image x:Name="ButtonImage" Margin="0,0,20,0" 
+    <FlexLayout x:Name="Flex" Direction="{Binding Direction}" BackgroundColor="Transparent">
+        <Image x:Name="ButtonImage" Margin="0,0,10,0" 
             HorizontalOptions="Start" Aspect="AspectFit"
             VerticalOptions="CenterAndExpand"
             Source="{Binding ImageSource}"/>
@@ -27,7 +26,8 @@
             FontAttributes="{Binding FontAttributes}"
             Text="{Binding Text}"
             TextColor="{Binding TextColor}"
-            Margin="0,0,0,0" Padding="0,0,0,0" VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="StartAndExpand"/>
+            Margin="0,0,0,0" Padding="0,0,0,0" 
+            VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+            VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
     </FlexLayout>
 </Frame>
