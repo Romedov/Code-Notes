@@ -5,7 +5,7 @@ namespace RiderConsoleTest
     {
         public static string TruncateCommas(string str, char comma)
         {
-            if (str.Count(ch=>ch==',') > 1)
+            if (str.Count(ch=> ch == comma) > 1)
             {
                 str = Reverse(Reverse(str).Remove(0, Reverse(str).IndexOf(comma) + 1));
                 str = TruncateCommas(str, comma);
